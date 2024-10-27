@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "5757",
+      "email": "maxmandarin29@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "3360",
+      "email": "maxmandarin29@gmail.com",
+      "password": "123"
+    }
+  ],
+  "login": [],
+  "register": [
+    {
+      "id": "f0e4",
+      "email": "maxmandarin29@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "e02f",
+      "email": "maxmandarin29@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "c747",
+      "email": "maxmandarin29@gmail.com",
+      "password": "123"
+    }
+  ]
+}

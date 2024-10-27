@@ -1,0 +1,65 @@
+
+
+#backgroundcenter {
+            border: silver solid 3px;
+            background-color: gray;
+            display: grid;
+            place-items: center; 
+            border-radius: 25px;        
+}
+#b {text-align: center;}
+
+    
+
+#nav {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: inline;
+    list-style: none;
+  text-align: center;
+    border: 1px solid silver;
+    border-radius: 13px ;
+    font-size: large;
+}
+#nav li:not(:last-of-type){
+    margin-right: 59px;
+}
+
+
+#nav li{
+   
+    display: inline;
+    text-align: center;
+    margin-right: 50px;
+  
+    color: white;
+}
+#nav li:hover {
+    cursor: pointer;
+    text-decoration: underline white;
+  
+}
+#a2 {
+    color: aliceblue;
+    background-image: url(https://images.unsplash.com/photo-1720048170996-40507a45c720?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+     border: silver solid 3px;
+    background-position: right;
+    padding: 13px;
+ 
+}
+#a2 h2:hover {
+
+    cursor: pointer;
+    border: solid black;
+
+}
+#a2 h2 {
+    display: inline;
+    border: 2px solid silver;
+    padding: 1px 20px 1px 20px ;
+    border-radius: 13px;
+    background-color: green;
+
+}
+#a2 { 
+    text-align: center;
+}
