@@ -17,20 +17,30 @@ const AuthForm: React.FC = () => {
     console.log(`Login: ${email} | ${password}`);
 
     try{
-      const res = await axios.post(`${BASE_URL}/users`)
-    }catch {
-
+      const res = await axios.get(`${BASE_URL}/users`)
+      console.log(res.data);
+      
+    }catch (err) {
+      console.log(err);
     }
   }
   const handleR = async (e) => {
     e.preventDefault();
     console.log(`Registered: ${email} | ${password}`);
 
-
+    if (password !== passwordV) {
+      setError("Passwords do not match");
+      return;
+  }
     try{
-
+      const res = await axios.post(`${BASE_URL}/users`, {
+        email,
+        password
+    });
+    console.log('User registered:', res.data);
+    setIsRegistrationOpened(false);
     }catch (err) {
-
+        console.log(err);
     }
   }
 
@@ -40,6 +50,7 @@ const AuthForm: React.FC = () => {
   
   const registerToggle = () => {
     setIsRegistrationOpened(!isRegistrationOpened)
+    setError('');
 }
 
   return (
@@ -47,6 +58,7 @@ const AuthForm: React.FC = () => {
         <button className="bg-white text-black px-4 py-2 rounded" onClick={loginToggle}>Login</button>
         <button className="bg-white text-black px-4 py-2 rounded ml-2" onClick={registerToggle}>Register</button>
 
+        {/* LOGIN */}
         {
           isLoginOpened && (
             <motion.div 
@@ -104,6 +116,8 @@ const AuthForm: React.FC = () => {
             </motion.div>
           )
         }
+
+        {/* REGISTER */}
 {
           isRegistrationOpened && (
             <motion.div 
@@ -122,7 +136,8 @@ const AuthForm: React.FC = () => {
                 exit={{opacity: 0}}
                 transition={{ duration: 0.3 }}
               >
-                  <h2 className="text-xl font-semibold mb-4">Registration</h2>
+                  <h2 className="text-xl font-semibold mb-2">Registration</h2>
+                  <h3 className='text-red-700 mb-2'>{error}</h3>
                   <form onSubmit={handleR}>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700" htmlFor="email">
